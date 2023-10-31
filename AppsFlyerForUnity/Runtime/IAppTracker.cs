@@ -1,4 +1,6 @@
-﻿namespace AppsFlyerForUnity.Interfaces {
+﻿using System.Threading.Tasks;
+
+namespace AppsFlyerForUnity.Interfaces {
     public interface IAppTracker {
         void SetUserId(string      userId);
         void TrackEvent(string     eventName);
@@ -7,7 +9,7 @@
     }
 
     public interface IDevKeyProvider {
-        string Key       { get; }
-        bool   IsDevMode { get; }
+        Task<string> GetKey();
+        bool         IsDevMode { get; }
     }
 }

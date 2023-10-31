@@ -1,0 +1,18 @@
+{
+    "name": "AppsFlyerForUnity.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:3fd6aef3c8d2f4444aa16abebba454b0"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

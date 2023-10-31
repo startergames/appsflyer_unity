@@ -16,14 +16,17 @@ namespace AppsFlyerForUnity {
         }
 
         private async Task Initialize() {
-            while (string.IsNullOrEmpty(keyProvider.Key) && Application.isPlaying) {
-                await Task.Delay(100);
-            }
+            var projectSettings = Resources.Load<AppsFlyerSettings>("AppsFlyerSettings");
 
+            var devKey = await keyProvider?.GetKey() ?? projectSettings?.devKey;
+            if(string.IsNullOrWhiteSpace(devKey)) {
+                Debug.LogError("AppsFlyer dev key is not set");
+                return;
+            }
+            
 #if UNITY_IOS && !UNITY_EDITOR
             AppsFlyer.waitForATTUserAuthorizationWithTimeoutInterval(60);
 #endif
-            var devKey = keyProvider.Key;
             AppsFlyerSDK.AppsFlyer.initSDK(devKey, Application.identifier, this);
             AppsFlyerSDK.AppsFlyer.startSDK();
         }
