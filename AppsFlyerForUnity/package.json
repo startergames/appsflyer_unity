@@ -1,0 +1,23 @@
+{
+    "name": "com.startergames.appsflyer",
+    "version": "1.0.0",
+    "displayName": "AppsFlyer for unity",
+    "description": "AppsFlyer initialize and track events for unity",
+    "unity": "2021.3",
+    "dependencies": {
+        "jp.hadashikick.vcontainer": "https://github.com/hadashiA/VContainer.git?path=VContainer/Assets/VContainer#1.13.2",
+        "appsflyer-unity-plugin": "https://github.com/AppsFlyerSDK/appsflyer-unity-plugin.git#upm"
+    },
+    "keywords": [
+        "unity",
+        "package",
+        "appsflyer",
+        "analytics",
+        "tracking"
+    ],
+    "author": {
+        "name": "Starter Games",
+        "email": "developer@startergames.com",
+        "url": "https://www.startergames.com"
+    }
+}
