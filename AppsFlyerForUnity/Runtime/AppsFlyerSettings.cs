@@ -6,7 +6,28 @@ namespace AppsFlyerForUnity {
         [FormerlySerializedAs("apiKey")]
         public const string SettingsPath = "Assets/Resources/AppsFlyerSettings.asset";
 
-        public string devKey;
-        public bool   testMode;
+        [SerializeField]
+        private string devKeyForAndroid;
+
+        [SerializeField]
+        private string devKeyForIOS;
+
+        [SerializeField]
+        private string devKeyForStandalone;
+
+        [SerializeField]
+        private bool testMode;
+
+        public string DevKey {
+            get {
+#if UNITY_IOS
+                return devKeyForIOS;
+#elif UNITY_ANDROID
+                return devKeyForAndroid;
+#else
+                return devKeyForStandalone;
+#endif
+            }
+        }
     }
 }

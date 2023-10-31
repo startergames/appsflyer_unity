@@ -18,7 +18,7 @@ namespace AppsFlyerForUnity {
         private async Task Initialize() {
             var projectSettings = Resources.Load<AppsFlyerSettings>("AppsFlyerSettings");
 
-            var devKey = await keyProvider?.GetKey() ?? projectSettings?.devKey;
+            var devKey = await keyProvider?.GetKey() ?? projectSettings?.DevKey;
             if(string.IsNullOrWhiteSpace(devKey)) {
                 Debug.LogError("AppsFlyer dev key is not set");
                 return;

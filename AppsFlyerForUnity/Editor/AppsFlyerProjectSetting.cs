@@ -47,10 +47,13 @@ namespace AppsFlyerForUnity {
                     marginBottom = 20,
                 }
             };
-            var devKeyField   = new PropertyField(_settingsObject.FindProperty(nameof(AppsFlyerSettings.devKey)));
-            var testModeField = new PropertyField(_settingsObject.FindProperty(nameof(AppsFlyerSettings.testMode)));
+            var devKeyAndroidField = new PropertyField(_settingsObject.FindProperty("devKeyForAndoird"));
+            var devKeyIosField     = new PropertyField(_settingsObject.FindProperty("devKeyForIOS"));
+            var devKeyStandaloneField = new PropertyField(_settingsObject.FindProperty("devKeyForStandalone"));
+            var testModeField      = new PropertyField(_settingsObject.FindProperty("testMode"));
             rootElement.Add(label);
-            rootElement.Add(devKeyField);
+            rootElement.Add(devKeyAndroidField);
+            rootElement.Add(devKeyIosField);
             rootElement.Add(new Label("IKeyProvider를 통한 키 설정이 있다면 이 필드는 무시됩니다.") {
                 style = {
                     fontSize = 10,
