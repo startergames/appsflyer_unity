@@ -28,6 +28,8 @@ namespace AppsFlyerForUnity {
             AppsFlyer.waitForATTUserAuthorizationWithTimeoutInterval(60);
 #endif
             if(keyProvider?.IsDevMode ?? projectSettings?.IsDebug ?? false) {
+                AppsFlyer.AFLog("Initialize", "AppsFlyer is in debug mode");
+                Debug.LogWarning("AppsFlyer is in debug mode");
                 AppsFlyerSDK.AppsFlyer.setIsDebug(true);
             }
             
