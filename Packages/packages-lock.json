@@ -11,10 +11,7 @@
       "version": "file:../AppsFlyerForUnity",
       "depth": 0,
       "source": "local",
-      "dependencies": {
-        "jp.hadashikick.vcontainer": "https://github.com/hadashiA/VContainer.git?path=VContainer/Assets/VContainer#1.13.2",
-        "appsflyer-unity-plugin": "https://github.com/AppsFlyerSDK/appsflyer-unity-plugin.git#upm"
-      }
+      "dependencies": {}
     },
     "com.unity.collab-proxy": {
       "version": "2.2.0",
