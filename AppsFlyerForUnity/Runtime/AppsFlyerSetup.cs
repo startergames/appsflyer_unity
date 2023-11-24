@@ -27,6 +27,14 @@ namespace AppsFlyerForUnity {
 #if UNITY_IOS && !UNITY_EDITOR
             AppsFlyer.waitForATTUserAuthorizationWithTimeoutInterval(60);
 #endif
+            AppsFlyerSDK.AppsFlyer.OnRequestResponse += (sender, args) => {
+                var af_args = args as AppsFlyerRequestEventArgs;
+                AppsFlyer.AFLog("AppsFlyerOnRequestResponse", $"status: {af_args.Status}, desc: {af_args.errorDescription}");
+                if (af_args.Status != 200) {
+                    Debug.LogError($"AppsFlyerOnRequestResponse: status: {af_args.Status}, desc: {af_args.errorDescription}");
+                }
+            };
+            
             AppsFlyerSDK.AppsFlyer.initSDK(devKey, Application.identifier, this);
             AppsFlyerSDK.AppsFlyer.startSDK();
         }

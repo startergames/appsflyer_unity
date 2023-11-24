@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3031ad9bfe0c43c2b778a617c4f295da, type: 3}
   m_Name: AppsFlyerSettings
   m_EditorClassIdentifier: 
-  devKey: 
-  testMode: 0
+  devKeyForAndroid: 
+  devKeyForIOS: 
+  devKeyForStandalone: 
+  testMode: 1
