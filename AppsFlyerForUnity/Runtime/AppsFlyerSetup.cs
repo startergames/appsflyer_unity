@@ -29,9 +29,9 @@ namespace AppsFlyerForUnity {
 #endif
             AppsFlyerSDK.AppsFlyer.OnRequestResponse += (sender, args) => {
                 var af_args = args as AppsFlyerRequestEventArgs;
-                AppsFlyer.AFLog("AppsFlyerOnRequestResponse", $"status: {af_args.Status}, desc: {af_args.errorDescription}");
-                if (af_args.Status != 200) {
-                    Debug.LogError($"AppsFlyerOnRequestResponse: status: {af_args.Status}, desc: {af_args.errorDescription}");
+                AppsFlyer.AFLog("AppsFlyerOnRequestResponse", $"status: {af_args.statusCode}, desc: {af_args.errorDescription}");
+                if (af_args.statusCode != 200) {
+                    Debug.LogError($"AppsFlyerOnRequestResponse: status: {af_args.statusCode}, desc: {af_args.errorDescription}");
                 }
             };
             
