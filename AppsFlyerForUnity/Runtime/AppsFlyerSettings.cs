@@ -15,8 +15,7 @@ namespace AppsFlyerForUnity {
         [SerializeField]
         private string devKeyForStandalone;
 
-        [SerializeField]
-        private bool testMode;
+        public bool IsDebug;
 
         public string DevKey {
             get {
