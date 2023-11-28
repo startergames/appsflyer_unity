@@ -41,7 +41,8 @@ namespace AppsFlyerForUnity {
                 }
             };
             
-            AppsFlyerSDK.AppsFlyer.initSDK(devKey, Application.identifier, this);
+            var appId = await keyProvider?.GetAppID() ?? projectSettings?.AppID ?? Application.identifier;
+            AppsFlyerSDK.AppsFlyer.initSDK(devKey, appId, this);
             AppsFlyerSDK.AppsFlyer.startSDK();
         }
 

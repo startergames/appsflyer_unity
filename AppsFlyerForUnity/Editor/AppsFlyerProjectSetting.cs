@@ -50,7 +50,10 @@ namespace AppsFlyerForUnity {
             var devKeyAndroidField = new PropertyField(_settingsObject.FindProperty("devKeyForAndroid"));
             var devKeyIosField     = new PropertyField(_settingsObject.FindProperty("devKeyForIOS"));
             var devKeyStandaloneField = new PropertyField(_settingsObject.FindProperty("devKeyForStandalone"));
+            var appIDAndroidField  = new PropertyField(_settingsObject.FindProperty("appIDForAndroid"));
+            var appIDIosField      = new PropertyField(_settingsObject.FindProperty("appIDForIOS"));
             var testModeField      = new PropertyField(_settingsObject.FindProperty("testMode"));
+            
             rootElement.Add(label);
             rootElement.Add(devKeyAndroidField);
             rootElement.Add(devKeyIosField);
@@ -60,6 +63,10 @@ namespace AppsFlyerForUnity {
                     fontSize = 10,
                 }
             });
+            
+            rootElement.Add(appIDAndroidField);
+            rootElement.Add(appIDIosField);
+            
             rootElement.Add(testModeField);
             rootElement.Bind(_settingsObject);
         }

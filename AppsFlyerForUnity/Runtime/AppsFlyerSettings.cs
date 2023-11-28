@@ -15,6 +15,13 @@ namespace AppsFlyerForUnity {
         [SerializeField]
         private string devKeyForStandalone;
 
+        [SerializeField]
+        private string appIDForIOS;
+
+        [SerializeField]
+        private string appIDForAndroid;
+
+
         public bool IsDebug;
 
         public string DevKey {
@@ -25,6 +32,18 @@ namespace AppsFlyerForUnity {
                 return devKeyForAndroid;
 #else
                 return devKeyForStandalone;
+#endif
+            }
+        }
+
+        public string AppID {
+            get {
+#if UNITY_IOS
+                return appIDForIOS;
+#elif UNITY_ANDROID
+                return appIDForAndroid;
+#else
+                return UnityEngine.Application.identifier;
 #endif
             }
         }

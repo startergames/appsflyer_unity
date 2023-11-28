@@ -11,5 +11,6 @@ namespace AppsFlyerForUnity.Interfaces {
     public interface IDevKeyProvider {
         Task<string> GetKey();
         bool         IsDevMode { get; }
+        Task<string> GetAppID();
     }
 }
