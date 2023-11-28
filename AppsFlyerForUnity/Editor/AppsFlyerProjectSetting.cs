@@ -52,7 +52,26 @@ namespace AppsFlyerForUnity {
             var devKeyStandaloneField = new PropertyField(_settingsObject.FindProperty("devKeyForStandalone"));
             var appIDAndroidField  = new PropertyField(_settingsObject.FindProperty("appIDForAndroid"));
             var appIDIosField      = new PropertyField(_settingsObject.FindProperty("appIDForIOS"));
-            var testModeField      = new PropertyField(_settingsObject.FindProperty("testMode"));
+            var testModeField      = new PropertyField(_settingsObject.FindProperty("IsDebug"));
+            
+            devKeyAndroidField.RegisterValueChangeCallback(evt => {
+                _settingsObject.ApplyModifiedProperties();
+            });
+            devKeyIosField.RegisterValueChangeCallback(evt => {
+                _settingsObject.ApplyModifiedProperties();
+            });
+            devKeyStandaloneField.RegisterValueChangeCallback(evt => {
+                _settingsObject.ApplyModifiedProperties();
+            });
+            appIDAndroidField.RegisterValueChangeCallback(evt => {
+                _settingsObject.ApplyModifiedProperties();
+            });
+            appIDIosField.RegisterValueChangeCallback(evt => {
+                _settingsObject.ApplyModifiedProperties();
+            });
+            testModeField.RegisterValueChangeCallback(evt => {
+                _settingsObject.ApplyModifiedProperties();
+            });
             
             rootElement.Add(label);
             rootElement.Add(devKeyAndroidField);
@@ -66,7 +85,6 @@ namespace AppsFlyerForUnity {
             
             rootElement.Add(appIDAndroidField);
             rootElement.Add(appIDIosField);
-            
             rootElement.Add(testModeField);
             rootElement.Bind(_settingsObject);
         }
