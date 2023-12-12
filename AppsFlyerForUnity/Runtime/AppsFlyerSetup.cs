@@ -40,6 +40,10 @@ namespace AppsFlyerForUnity {
                     Debug.LogError($"AppsFlyerOnRequestResponse: status: {af_args.statusCode}, desc: {af_args.errorDescription}");
                 }
             };
+            AppsFlyer.OnInAppResponse += (sender, args) => {
+                var af_args = args as AppsFlyerRequestEventArgs;
+                AppsFlyer.AFLog("AppsFlyerOnRequestResponse", " status code " + af_args.statusCode);
+            };
             
             var appId = await keyProvider?.GetAppID() ?? projectSettings?.AppID ?? Application.identifier;
             AppsFlyerSDK.AppsFlyer.initSDK(devKey, appId, this);
